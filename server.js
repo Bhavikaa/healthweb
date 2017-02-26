@@ -21,7 +21,7 @@ http.get('https://data.medicare.gov/resource/eqxu-aw4f.json?$select=provider_num
         var responseObject = JSON.parse(responseString);
         console.log(responseObject.length);
         for (var i = 0; i < responseObject.length; i++) {
-            //console.log(responseObject[i]);
+            console.log(responseObject[i]);
              var dlf = new DialysisInfo();
             dlf.provider_name = responseObject[i].provider_name;
             dlf.facility_name = responseObject[i].facility_name;
@@ -36,8 +36,9 @@ http.get('https://data.medicare.gov/resource/eqxu-aw4f.json?$select=provider_num
 
             })
         }
-       
+       process.exit();
 
     });
+    
 })
 
